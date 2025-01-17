@@ -64,7 +64,7 @@ function App() {
               {messages != null ? messages
                   .sort((a, b) => a.id - b.id)
                   .map((message) => {
-                  return <Messages key={message.id} message={message} currentUser={currentUser} />;
+                  return <Messages key={message.id} message={message} currentUser={currentUser} setMessages={setMessages} />;
               }) : <div>Send a message!</div>}
           </div>
           <form onSubmit={handleSubmit}>

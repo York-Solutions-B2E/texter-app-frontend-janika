@@ -5,7 +5,7 @@ import deleteIcon from '../assets/delete.svg'
 import saveIcon from '../assets/save.svg'
 import cancelIcon from '../assets/cancel.svg'
 
-function Messages({ key, message, currentUser}) {
+function Messages({ key, message, currentUser, setMessages }) {
     const [messageText, setMessageText] = useState(message.text); // State to store message text
     const [isEditing, setIsEditing] = useState(false); // State to track if the message is being edited
 
@@ -82,7 +82,7 @@ function Messages({ key, message, currentUser}) {
                             onChange={(e) => setMessageText(e.target.value)} // Update message text as user types
                         />
                     ) : (
-                        <span className="message-text">{messageText}</span> // Display message text normally
+                        <span className="message-text">{message.text}</span> // Display message text normally
                     )}
                 </p>
                 {currentUser.id == message.user.id ?
